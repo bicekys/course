@@ -18,7 +18,6 @@ public class MainActivitynew extends AppCompatActivity {
     private String titles[] = {
             " Природа",
             " Достопримечательности",
-            " Туры",
             " Избранное",
             " Прогноз погоды",
     };
@@ -47,14 +46,14 @@ public class MainActivitynew extends AppCompatActivity {
                     Intent myintent= new Intent(view.getContext(),sights.class);
                     startActivityForResult(myintent,0);}
 
-                if (position==2){
+              /*  if (position==2){
                     Intent myintent= new Intent(view.getContext(),tours.class);
-                    startActivityForResult(myintent,0);}
-                    if (position==3) {
+                    startActivityForResult(myintent,0);}*/
+                if (position==2) {
                         Intent myintent = new Intent(view.getContext(), save.class);
                         startActivityForResult(myintent, 0);
                     }
-                if (position==4) {
+                if (position==3) {
                     Intent myintent = new Intent(view.getContext(), forecast.class);
                     startActivityForResult(myintent, 0);
                 }

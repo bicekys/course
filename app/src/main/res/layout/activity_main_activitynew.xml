@@ -7,19 +7,20 @@
     tools:context=".MainActivitynew"
     android:weightSum="1">
 
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.10"
         android:fontFamily="serif"
         android:text="
 
 
         TUVA TRAVEL"
+
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="18sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
 
@@ -29,12 +30,13 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.14"
         android:text=" Мобильный путеводитель-справочник "
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"
         android:layout_height="179dp"
-        android:layout_weight="0.26" />
+        android:layout_weight="0.97" />
 
 </LinearLayout>

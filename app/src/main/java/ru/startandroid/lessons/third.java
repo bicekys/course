@@ -1,42 +1,63 @@
 package ru.startandroid.lessons;
-
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.nfc.Tag;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
-public class third extends AppCompatActivity {
-    TextView name;
-    ImageView image;
+import android.os.Bundle;
+
+
+
+public class third extends second {
+    private static final String TAG = "MainActivity";
+
+    private adapt mSectionsPageAdapter;
+
+    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
+        Log.d(TAG, "onCreate: Starting.");
 
-        //DatabaseBandler databaseBandler= new DatabaseBandler(this);
+        mSectionsPageAdapter = new adapt(getSupportFragmentManager());
 
-        name = (TextView) findViewById(R.id.griddata);
-        image = (ImageView) findViewById(R.id.imageView);
-        Intent intent = getIntent();
-
-        //name.setText(intent.getStringExtra("name"));
-        image.setImageResource(intent.getIntExtra("image", 0));
-        String text = " ";
-        try {
-            InputStream is = getAssets().open("mytext.txt");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            text = new String(buffer);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-
-        }
-        name.setText(text);
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        setupViewPager(mViewPager);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(mViewPager);
     }
+
+    private void setupViewPager(ViewPager viewPager) {
+        adapt adapter = new adapt(getSupportFragmentManager());
+        adapter.addFragment(new tab1frag(), "TAB1 ");
+        adapter.addFragment(new tab2frag(), "TAB2");
+        adapter.addFragment(new tab3frag(), "TAB3");
+        viewPager.setAdapter(adapter);
+    }
+
 }
+
+
+
+
