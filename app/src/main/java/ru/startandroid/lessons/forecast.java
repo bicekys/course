@@ -17,6 +17,8 @@ public class forecast extends AppCompatActivity {
 
         webView= (WebView) findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://https://www.gismeteo.ru/weather-kyzyl-5189/2-weeks/");
+        webView.loadUrl("http://www.meteoservice.ru/weather/now/kyizyil.html");
+
+
     };
 }
