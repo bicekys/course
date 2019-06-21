@@ -33,6 +33,11 @@ public class third extends second {
     private adapt mSectionsPageAdapter;
 
     private ViewPager mViewPager;
+    ImageView btn_favourites;
+  /*  IItemClickListener itemClickListener;
+    public void setItemClickListener(IItemClickListener itemClickListener){
+        this.itemClickListener=itemClickListener;
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,7 @@ public class third extends second {
         mSectionsPageAdapter = new adapt(getSupportFragmentManager());
 
         mViewPager = (ViewPager) findViewById(R.id.container);
+        btn_favourites=(ImageView) findViewById(R.id.favorite_button);
         setupViewPager(mViewPager);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
@@ -50,9 +56,9 @@ public class third extends second {
 
     private void setupViewPager(ViewPager viewPager) {
         adapt adapter = new adapt(getSupportFragmentManager());
-        adapter.addFragment(new tab1frag(), "TAB1 ");
-        adapter.addFragment(new tab2frag(), "TAB2");
-        adapter.addFragment(new tab3frag(), "TAB3");
+        adapter.addFragment(new tab1frag(), "Инфо ");
+        adapter.addFragment(new tab2frag(), "Фото");
+        adapter.addFragment(new tab3frag(), "Видео");
         viewPager.setAdapter(adapter);
     }
 

@@ -24,6 +24,13 @@
             android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay">
+            <ImageView
+               android:id="@+id/favorite_button"
+                android:layout_height="42dp"
+               android:src="@drawable/ic_favorite_border_wite_24dp"
+
+                android:layout_width="42dp"
+               />
 
         </android.support.v7.widget.Toolbar>
 

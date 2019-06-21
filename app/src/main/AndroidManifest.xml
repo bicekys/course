@@ -24,7 +24,6 @@
         <activity android:name=".forecast" />
         <activity android:name=".sights" />
         <activity android:name=".tours" />
-        <activity android:name=".cncretetour" />
     </application>
 
 </manifest>
