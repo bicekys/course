@@ -40,7 +40,7 @@ public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
         Intent intent= new Intent(getApplicationContext(),third.class);
         intent.putExtra("name",placeName[i]);
         intent.putExtra("image",placeImg[i]);
-    Context context;
+        Context context;
         startActivity(intent);}
         });
         }

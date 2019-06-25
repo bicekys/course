@@ -32,8 +32,7 @@ public class MainActivitynew extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
         //устанавливаем массив в ListView
 
-     ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,
-             android.R.layout.activity_list_item,android.R.id.text1,titles
+     ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,android.R.layout.activity_list_item,android.R.id.text1,titles
              );
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

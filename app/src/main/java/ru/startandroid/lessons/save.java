@@ -54,20 +54,16 @@ public class save extends Fragment {
                                             int position, long arg3) {
                     }
                 });
-                favoriteList
-                        .setOnItemLongClickListener(new OnItemLongClickListener() {
+                favoriteList.setOnItemLongClickListener(new OnItemLongClickListener() {
                             @Override
                             public boolean onItemLongClick(
                                     AdapterView<?> parent, View view,
                                     int position, long id) {
-                                ImageView button = (ImageView) view
-                                        .findViewById(R.id.imgbtn_favorite);
+                                ImageView button = (ImageView) view.findViewById(R.id.imgbtn_favorite);
                                 String tag = button.getTag().toString();
                                 if (tag.equalsIgnoreCase("grey")) {
-                                    sharedPreference.addFavorite(activity,
-                                            favorites.get(position));
-                                    Toast.makeText(
-                                            activity,
+                                    sharedPreference.addFavorite(activity,favorites.get(position));
+                                    Toast.makeText(activity,
                                            activity.getResources().getString(
                                                     R.string.add_favr),
                                             Toast.LENGTH_SHORT).show();
@@ -97,7 +93,7 @@ public class save extends Fragment {
         if (activity != null && !activity.isFinishing()) {
             AlertDialog alertDialog = new AlertDialog.Builder(activity)
                    .create();
-          //  alertDialog.setTitle(title);
+
             alertDialog.setMessage(message);
            alertDialog.setCancelable(false);
 // setting OK Button
@@ -112,10 +108,10 @@ public class save extends Fragment {
             alertDialog.show();
        }
     }
-    @Override
+   /* @Override
     public void onResume() {
-      //  getActivity().setTitle(R.string.favorites);
-       // getActivity().getActionBar().setTitle(R.string.favorites);
+        getActivity().setTitle(R.string.favorites);
+        getActivity().getActionBar().setTitle(R.string.favorites);
         super.onResume();
-    }
+    }*/
 }

@@ -34,12 +34,7 @@ public class third extends second {
 
     private ViewPager mViewPager;
     ImageView btn_favourites;
-  /*  IItemClickListener itemClickListener;
-    public void setItemClickListener(IItemClickListener itemClickListener){
-        this.itemClickListener=itemClickListener;
-    }*/
-
-    @Override
+     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
